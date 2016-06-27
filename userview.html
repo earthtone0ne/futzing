@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+{% block content %}
+<head>
+   <meta charset="UTF-8">
+   <title>{{users.name}}'s Messages</title>
+   <link rel="stylesheet" href="stylesheet.css" type="text/css">
+</head>
+<body>
+
+  <h1>{{users.name}}'s Messages</h1>
+  <p id="para">Here's what {{users.name}} had to say:</p>
+  <div>
+     <ul>
+         {% for msg in users.messages %}
+         <li>"{{msg.message}}"</li>
+
+         {% endfor %}
+
+     </ul>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src='app.js'></script>
+
+</body>
+{% endblock %}
+</html>
